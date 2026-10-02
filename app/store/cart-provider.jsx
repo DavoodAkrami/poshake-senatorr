@@ -22,11 +22,12 @@ export function CartProvider({ children }) {
     items,
     count: items.reduce((sum, item) => sum + item.quantity, 0),
     add: (product) => setItems((current) => {
-      const existing = current.find((item) => item.id === product.id);
-      return existing ? current.map((item) => item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item) : [...current, { ...product, quantity: 1 }];
+      const cartKey = product.cartKey || product.id;
+      const existing = current.find((item) => (item.cartKey || item.id) === cartKey);
+      return existing ? current.map((item) => (item.cartKey || item.id) === cartKey ? { ...item, quantity: item.quantity + 1 } : item) : [...current, { ...product, cartKey, quantity: 1 }];
     }),
-    change: (id, delta) => setItems((current) => current.map((item) => item.id === id ? { ...item, quantity: item.quantity + delta } : item).filter((item) => item.quantity > 0)),
-    remove: (id) => setItems((current) => current.filter((item) => item.id !== id)),
+    change: (id, delta) => setItems((current) => current.map((item) => (item.cartKey || item.id) === id ? { ...item, quantity: item.quantity + delta } : item).filter((item) => item.quantity > 0)),
+    remove: (id) => setItems((current) => current.filter((item) => (item.cartKey || item.id) !== id)),
     clear: () => setItems([])
   }), [items]);
 

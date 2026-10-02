@@ -3,23 +3,23 @@ import { CartProvider } from "./store/cart-provider";
 import { SiteHeader } from "./store/site-header";
 
 export const metadata = {
-  title: "Senatorr — Modern Menswear",
-  description: "A considered edit of modern knitwear and everyday essentials from Senatorr.",
-  openGraph: { title: "Senatorr — Modern Menswear", description: "Quiet confidence, worn every day." }
+  title: "سناتور | پوشاک مردانه",
+  description: "مجموعه‌ای منتخب از بافت‌های مدرن و لباس‌های روزمره سناتور.",
+  openGraph: { title: "سناتور | پوشاک مردانه", description: "سادگیِ ماندگار برای هر روز." }
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="fa" dir="rtl">
       <body>
         <CartProvider>
-          <div className="announcement"><span>THE SENATORR EDIT</span><span>Modern essentials, considered.</span><a href="https://www.instagram.com/poshake_senatorr/" target="_blank" rel="noreferrer">Follow our story <span aria-hidden="true">↗</span></a></div>
+          <div className="announcement"><span>انتخاب سناتور</span><span>پوشاک روزمره با نگاهی دقیق</span><a href="https://www.instagram.com/poshake_senatorr/" target="_blank" rel="noreferrer">روایت ما در اینستاگرام <span aria-hidden="true">↗</span></a></div>
           <SiteHeader />
           {children}
           <footer className="footer">
-            <div className="footer-brand"><a className="wordmark" href="/" aria-label="Senatorr home"><span className="brand-mark">S</span><span>SENATORR<span className="brand-period">.</span></span></a><p>Everyday pieces, chosen with intention.</p></div>
-            <div className="footer-links"><a href="/shop">Shop the collection</a><a href="https://www.instagram.com/poshake_senatorr/" target="_blank" rel="noreferrer">Instagram ↗</a><a href="/cart">Your bag</a></div>
-            <div className="footer-note">Product prices and availability are shared by DM.<br />© {new Date().getFullYear()} Senatorr</div>
+            <div className="footer-brand"><a className="wordmark" href="/" aria-label="صفحه اصلی سناتور"><span className="brand-mark">S</span><span>SENATORR<span className="brand-period">.</span></span></a><p>انتخابی روزمره، با دقت و سلیقه.</p></div>
+            <div className="footer-links"><a href="/shop">مشاهده مجموعه</a><a href="https://www.instagram.com/poshake_senatorr/" target="_blank" rel="noreferrer">اینستاگرام ↗</a><a href="/cart">سبد خرید</a></div>
+            <div className="footer-note">قیمت و موجودی محصولات از طریق دایرکت اعلام می‌شود.<br />© {new Date().getFullYear()} سناتور</div>
           </footer>
         </CartProvider>
       </body>
