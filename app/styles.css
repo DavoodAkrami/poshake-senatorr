@@ -37,3 +37,5 @@
 @media(max-width:800px){.product-detail{padding-top:24px;padding-bottom:70px}.pdp-breadcrumb{font-size:8px;margin-bottom:18px}.pdp-layout{grid-template-columns:1fr;gap:25px}.pdp-visual{padding-block:0 21px;padding-inline-start:0;padding-inline-end:13px}.pdp-image{aspect-ratio:.92}.pdp-copy{padding:0 3px}.pdp-copy>.eyebrow{margin-bottom:10px}.pdp-copy h1{font-size:37px}.pdp-description{margin:17px 0 20px}.pdp-enquiry{padding:16px 0}.pdp-back-link{margin-top:24px}}
 
 html[lang=fa] .button .lucide-arrow-right,html[lang=fa] .text-link .lucide-arrow-right,html[lang=fa] .pdp-back-link .lucide-arrow-right{transform:scaleX(-1)}
+
+@keyframes slide-rtl{from{transform:translateX(20px);opacity:.7}to{transform:none;opacity:1}}html[lang=fa] .mobile-drawer{animation:slide-rtl .25s ease}
